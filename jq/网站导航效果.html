@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul{list-style: none;}
+			img{display: block; border:0;}
+			.wrap{
+				width: 712px;
+				margin: 100px auto;
+				border: 1px solid #ccc;
+				padding: 10px 0 0 10px;
+				overflow: hidden;
+			}
+			.wrap li{
+				float: left;
+				height: 125px;
+				width: 178px;
+				position: relative;
+			}
+			.wrap ul p,
+			.wrap ul div{
+				position: absolute;
+				bottom: -25px;
+				width: 178px;
+				height: 25px;
+				text-align: center;
+				color: #FFFFFF;
+				
+			}
+			.wrap li div{
+				background-color: #000000;
+			}
+			.wrap p{
+				background: url(img/bg.png) no-repeat;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			$(function(){
+				$(".wrap li")
+				.append("<div></div> <p>百度一下就知道</p>")
+				.children("div")
+				.fadeTo(500,0.5)
+				.next("p").each(function(index,ele){
+					$(ele).css("background-position","5px -"+(index * 25)+ "px");
+				})
+				.parent()
+				.hover(function(){
+					$(this).children("div,p").animate({"bottom":0},338)
+				},function(){
+					$(this).children("div,p").animate({"bottom":-25},338)
+				})
+//             $(".wrap li").hover(function(){
+//              $(this).children("div,p").stop().animate({"bottom":0},338);
+//          },function(){
+//              $(this).children("div,p").stop().animate({"bottom":-26},338);
+//          });
+			})
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<ul>
+				<li><a href="#"><img src="img/01.JPG"/></a></li>
+				<li><a href="#"><img src="img/02.JPG"/></a></li>
+				<li><a href="#"><img src="img/03.JPG"/></a></li>
+				<li><a href="#"><img src="img/04.JPG"/></a></li>
+				<li><a href="#"><img src="img/05.JPG"/></a></li>
+				<li><a href="#"><img src="img/06.JPG"/></a></li>
+				<li><a href="#"><img src="img/07.JPG"/></a> </li>
+				<li><a href="#"><img src="img/08.JPG"/></a></li>
+			</ul>
+		</div>
+	</body>
+</html>

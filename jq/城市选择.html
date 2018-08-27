@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			select{
+				width: 200px;
+				height: 200px;
+				background-color: teal;
+				font-size: 20px;
+			}
+			.btn-box{
+				width: 30px;
+				display: inline-block;
+				vertical-align: top;
+				margin-top: 5px;
+			}
+			button{
+				margin-top: 5px;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			$(function(){
+				$("#btn-sel-all").on("click",function(){
+					$("#src-city option").appendTo($("#back-city"));
+				})
+				$("#btn-back-all ").on("click",function(){
+					$("#back-city option").appendTo($("#src-city"));
+				})
+				$("#btn-sel").on("click",function(){
+					$("#src-city option:selected").appendTo("#back-city")
+				})
+				$("#btn-back").on("click",function(){
+					$("#back-city option:selected").appendTo($("#src-city"));
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<select id="src-city" name="src-city" multiple>
+			<option value="1">北京</option>
+			<option value="2">上海</option>
+			<option value="3">云南</option>
+			<option value="4">广州</option>
+			<option value="5">天津</option>
+		</select>
+		<div class="btn-box">
+				<button id="btn-sel-all">&gt;&gt;</button>
+				<button id="btn-back-all">&lt;&lt;</button>
+				<button id="btn-sel">&gt;</button>
+				<button id="btn-back">&lt;</button>
+				
+			</div>
+		<select id="back-city" name="back-city" multiple>
+			
+		</select>	
+	</body>
+</html>

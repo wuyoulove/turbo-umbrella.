@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$("#btn").click(function(){
+				$("div").hide();
+			})
+		})
+	</script>
+	<body>
+		<button id="btn">按钮</button>
+	    <div></div>
+	</body>
+</html>

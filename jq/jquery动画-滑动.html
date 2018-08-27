@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+	<script>
+		$(document).ready(function(){
+			$("div").css({
+				"width":"200px",
+				"height":"200px",
+				"background":"gold",
+				"display":"none"
+			})
+			$("button").eq(0).click(function(){
+//				$("div").show();
+                $("div").slideDown(3000,"swing",function(){});
+			})
+			$("button").eq(1).click(function(){
+//				$("div").hide();
+                $("div").slideUp(3000,"swing",function(){});
+			})
+			$("button").eq(2).click(function(){
+				$("div").slideToggle();
+			})
+		})
+	</script>
+	<body>
+		<button>下拉</button>
+		<button>上拉</button>
+		<button>切换</button>
+		<div></div>
+	</body>
+</html>

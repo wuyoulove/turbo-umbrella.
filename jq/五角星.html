@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul{
+				list-style: none;
+			}
+			.box{
+				color: red;
+				font-size: 40px;
+			}
+			.box li{
+				float: left;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			$(function(){
+				var wjx_sel="★",
+				    wjx_none="☆";
+				$(".box").on("mouseover","li",function(){
+					$(this).text(wjx_sel)
+					.prevAll().text(wjx_sel)
+					.end()
+					.nextAll().text(wjx_none);
+				}).on("click","li",function(){
+					$(this).addClass("clicked").siblings().removeClass("clicked");
+				}).on("mouseout","li",function(){
+					$(".box li").text(wjx_none);
+					$(".clicked").text(wjx_sel)
+					.prevAll().text(wjx_sel)
+					.end()
+					.nextAll().text(wjx_none);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+				<li>☆</li>
+			</ul>
+		</div>
+	</body>
+</html>

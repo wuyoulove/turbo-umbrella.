@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<script>
+			$(function(){
+				$("div").css("background-color","red");
+				$("button").eq(0).click(function(){
+					$("div").css("height","300px");
+				})
+				$("button").eq(1).click(function(){
+					$("div").css("width","300px");
+				})
+				$("button").eq(2).click(function(){
+					$("div").html($("div").width());
+				})
+				$("button").eq(3).click(function(){
+					$("div").html($("div").css("height"));
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button>设置height</button>
+		<button>设置width</button>
+		<button>获取宽度</button>
+		<button>获取高度</button>
+		<div></div>
+	</body>
+</html>
